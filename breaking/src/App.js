@@ -1,12 +1,11 @@
-import "./App.css";
-// import Header from "./components/header/header";
-import Face from "./components/face/Face";
+import "./App.scss";
+// import Header from "./components/organizmes/Header/Header";
+import Card from "./components/molecules/Card";
 
 const App = () => {
   return (
     <div>
-      {/* <Header />
-      <main className="main">
+      {/* <main className="main">
         <div className="wrapper">
           <div className="main__input">
             <input
@@ -21,9 +20,9 @@ const App = () => {
           </div>
           <div className="main__catalog-title"></div>
         </div>
-        
       </main> */}
-      <Face />
+      {/* <Header /> */}
+      <Card />
     </div>
   );
 };
