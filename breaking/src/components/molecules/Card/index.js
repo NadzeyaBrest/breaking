@@ -1,18 +1,19 @@
 import React from "react";
-import s from "./style.module.scss";
+import style from "./style.module.scss";
 import man from "../../../assets/images/man.jpg";
 
-const Card = () => {
+const Card = (props) => {
+  let { card } = props;
   return (
-    <div class={s.item}>
-      <div className={s.img}>
+    <div className={style.item}>
+      <div className={style.img}>
         <img src={man} alt="man" />
       </div>
-      <div className={s.content}>
-        <span className={s.status}> Живой</span>
+      <div className={style.content}>
+        <span className={style.status}>{card.status}</span>
         <div>
-          <p className={s.name}>Андрeй Панасюк</p>
-          <p className={s.date}>23.11.2001</p>
+          <p className={style.name}>{card.name}</p>
+          <p className={style.date}>{card.date}</p>
         </div>
       </div>
     </div>

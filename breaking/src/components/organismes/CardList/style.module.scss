@@ -1,0 +1,9 @@
+@import "../../../assets/styles/index.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  max-width: 75rem;
+}
