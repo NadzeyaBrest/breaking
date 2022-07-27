@@ -3,7 +3,14 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 2rem;
-  row-gap: 1.5rem;
+  gap: 2rem 1.5rem;
   max-width: 75rem;
+  padding: 1rem;
+  @include media-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+  }
+  @include media-mobile {
+    grid-template-columns: 1fr;
+  }
 }

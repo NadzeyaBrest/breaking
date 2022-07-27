@@ -17,6 +17,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @include media-tablet {
+      padding: 0.8rem 1.3rem;
+    }
+    @include media-mobile {
+      padding: 0.5rem 1rem;
+    }
+
     .status {
       color: $color-addition-bright;
       background: $color-addition;
@@ -27,18 +34,28 @@
       align-self: flex-start;
       letter-spacing: 0.1rem;
       font-variant: small-caps;
+      @include media-tablet {
+        padding: 0.3rem 0.5rem;
+        @include font($size: 0.7rem, $height: 0.8rem);
+      }
     }
     .name {
       color: $color-black;
       font-size: 1rem;
       line-height: 1.5rem;
       margin-bottom: 0;
+      @include media-tablet {
+        @include font($height: 1.2rem, $size: 0.9rem);
+      }
     }
     .date {
       font-size: 0.75rem;
       line-height: 1.5rem;
       opacity: 0.4;
       color: $color-black;
+      @include media-tablet {
+        @include font($height: 1.2rem, $size: 0.6rem);
+      }
     }
   }
 }
