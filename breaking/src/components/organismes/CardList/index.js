@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./style.module.scss";
 import Card from "../../molecules/Card";
-import cards from "../../../cards";
+import { useSelector } from "react-redux";
 
 const CardList = () => {
-  let cardElement = cards.map((card) => {
+  const persons = useSelector((state) => state.persons.persons);
+  let cardElement = persons.map((card) => {
     return (
       <Card
         img={card.img}
