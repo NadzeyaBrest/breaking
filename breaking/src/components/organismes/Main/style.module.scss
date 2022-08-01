@@ -1,0 +1,8 @@
+@import "../../../assets/styles/index.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: calc(100vh-10rem);
+}

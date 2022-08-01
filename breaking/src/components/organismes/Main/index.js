@@ -2,12 +2,11 @@ import React from "react";
 import CardList from "../CardList";
 import style from "./style.module.scss";
 
-const Wrapper = () => {
+const Main = () => {
   return (
-    <div className={style.wrapper}>
+    <div className={style.main}>
       <CardList />
     </div>
   );
 };
-
-export default Wrapper;
+export default Main;

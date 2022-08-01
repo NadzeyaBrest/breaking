@@ -1,0 +1,14 @@
+@import "../../../assets/styles/index.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh-80px);
+  margin-left: 12rem;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+}

@@ -1,0 +1,13 @@
+@import "../../../assets/styles/index.scss";
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 3rem;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

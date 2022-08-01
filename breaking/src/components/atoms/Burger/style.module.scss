@@ -1,0 +1,33 @@
+@import "../../../assets/styles/index.scss";
+
+%line {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+
+.burger {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.75rem;
+  width: 1rem;
+  height: 0.62rem;
+  &::after {
+    @extend %line;
+    left: 0;
+    bottom: 0;
+  }
+  &::before {
+    @extend %line;
+    left: 0;
+    top: 0;
+  }
+  .line {
+    @extend %line;
+    left: 0;
+    top: 0.3rem;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style.module.scss";
-// import man from "../../../assets/images/man.jpg";
+import { NavLink } from "react-router-dom";
 
 const Card = (props) => {
   return (
@@ -9,7 +9,9 @@ const Card = (props) => {
         <img src={props.img} alt="pearsonimg" />
       </div>
       <div className={style.content}>
-        <span className={style.status}>{props.status}</span>
+        <NavLink to="/catalog3" className={style.status}>
+          {props.status}
+        </NavLink>
         <div>
           <p className={style.name}>{props.name}</p>
           <p className={style.date}>{props.date}</p>
