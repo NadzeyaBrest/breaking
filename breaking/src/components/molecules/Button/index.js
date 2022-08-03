@@ -1,45 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Burger from "../../atoms/Burger";
 import style from "./style.module.scss";
+import { useLocation } from "react-router-dom";
 
-// class Button extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       flag: false,
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <NavLink to="/catalog" className={style.button}>
-//         <Burger />
-//         <NavLink to="/catalog" className={style.text}>
-//           Каталог
-//         </NavLink>
-//       </NavLink>
-//     );
-//   }
-// }
 const Button = () => {
-  // let buttonElement = React.createRef();
-  // function handleClick() {
-  //   {
-  //     let element = buttonElement.current;
-  //     console.log(style);
-  //   }
-  // }
+  const location = useLocation();
+  console.log(location.pathname);
+
+  const buttonColored =
+    location.pathname === "/catalog"
+      ? style.button + " " + style.colored
+      : style.button;
   return (
-    <NavLink
-      to="/catalog"
-      // ref={buttonElement}
-      // onClick={handleClick}
-      className={style.button}
-    >
+    <NavLink to="/catalog" className={buttonColored}>
       <Burger />
       <NavLink to="/catalog" className={style.text}>
-        Каталог
+        Kаталог
       </NavLink>
     </NavLink>
   );

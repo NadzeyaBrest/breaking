@@ -1,13 +1,6 @@
 @import "../../../assets/styles/index.scss";
 
 .wrapper {
-  padding-left: 8.5%;
-  margin: 0 auto;
+  @extend %container;
   background-color: $color-bright;
-  @include media-tablet {
-    padding-left: 5.5%;
-  }
-  @include media-mobile {
-    padding-left: 3.5%;
-  }
 }
