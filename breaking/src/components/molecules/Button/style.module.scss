@@ -1,0 +1,18 @@
+@import "../../../assets/styles/index.scss";
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .text {
+    @include font($height: 1.5rem, $size: 1rem);
+  }
+  &.active {
+    background-color: $color-addition-bright;
+  }
+  &.colored {
+    background-color: $color-main;
+  }
+}

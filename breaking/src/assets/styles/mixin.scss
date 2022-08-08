@@ -23,3 +23,14 @@
   line-height: $height;
   font-weight: $weight;
 }
+
+%flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+%container {
+  max-width: 77rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}

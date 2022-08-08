@@ -1,11 +1,11 @@
 @import "../../../assets/styles/index.scss";
 
 .grid {
+  @extend %container;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1.5rem;
-  max-width: 75rem;
-  padding: 1rem;
+  background-color: $color-bright;
   @include media-tablet {
     grid-template-columns: repeat(2, 1fr);
     padding: 1rem;
