@@ -6,8 +6,6 @@ import { useLocation } from "react-router-dom";
 
 const Button = () => {
   const location = useLocation();
-  console.log(location.pathname);
-
   const buttonColored =
     location.pathname === "/catalog"
       ? style.button + " " + style.colored

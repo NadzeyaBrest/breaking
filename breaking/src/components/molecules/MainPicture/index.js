@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 import mainWebp from "../../../assets/images/mainWebp.webp";
 import mainJpg from "../../../assets/images/main.jpg";
 
-const Picture = () => {
+const MainPicture = () => {
   return (
     <picture className={style.main}>
       <source type="image/webp" srcSet={mainWebp} />
@@ -12,4 +12,4 @@ const Picture = () => {
     </picture>
   );
 };
-export default Picture;
+export default MainPicture;

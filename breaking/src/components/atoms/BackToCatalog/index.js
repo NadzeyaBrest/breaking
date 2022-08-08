@@ -3,7 +3,7 @@ import style from "./style.module.scss";
 import { NavLink } from "react-router-dom";
 import arrow from "../../../assets/images/arrow.svg";
 
-const Arrow = () => {
+const BackToCatalog = () => {
   return (
     <div className={style.container}>
       <img src={arrow} className={style.arrow} alt="arrow" />
@@ -13,4 +13,4 @@ const Arrow = () => {
     </div>
   );
 };
-export default Arrow;
+export default BackToCatalog;

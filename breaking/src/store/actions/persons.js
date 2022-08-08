@@ -14,3 +14,17 @@ export const getPersons = () => async (dispatch) => {
     console.log(error);
   }
 };
+export const getPerson = (id) => async (dispatch) => {
+  try {
+    const { value, error } = await Repository.PersonsActions.getPersonFromApi(
+      id
+    );
+    if (error) {
+      console.log("error getting");
+    } else {
+      dispatch(persons.actions.setPerson(value));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
