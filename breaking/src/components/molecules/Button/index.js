@@ -13,9 +13,7 @@ const Button = () => {
   return (
     <NavLink to="/catalog" className={buttonColored}>
       <Burger />
-      <NavLink to="/catalog" className={style.text}>
-        Kаталог
-      </NavLink>
+      <span className={style.text}>Kаталог</span>
     </NavLink>
   );
 };

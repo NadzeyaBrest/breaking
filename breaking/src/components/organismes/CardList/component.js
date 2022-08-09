@@ -6,6 +6,8 @@ const CardList = ({ persons }) => {
   let cardElement = persons.map((card) => {
     return (
       <Card
+        key={card.char_id}
+        id={card.char_id}
         img={card.img}
         status={card.status}
         name={card.name}

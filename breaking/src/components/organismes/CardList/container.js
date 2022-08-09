@@ -11,7 +11,7 @@ const CardListContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPersons());
-  });
+  }, []);
 
   return <CardList persons={persons} />;
 };

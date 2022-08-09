@@ -19,6 +19,7 @@ export const getPerson = (id) => async (dispatch) => {
     const { value, error } = await Repository.PersonsActions.getPersonFromApi(
       id
     );
+
     if (error) {
       console.log("error getting");
     } else {

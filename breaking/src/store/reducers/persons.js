@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   persons: [],
-  person: [],
+  person: {},
 };
 
 export const persons = createSlice({
@@ -13,7 +13,7 @@ export const persons = createSlice({
       state.persons = payload;
     },
     setPerson(state, { payload }) {
-      state.chosenPerson = payload;
+      state.person = payload;
     },
   },
 });
