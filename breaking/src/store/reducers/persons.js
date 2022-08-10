@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   persons: [],
   person: {},
+  limit: 9,
 };
 
 export const persons = createSlice({

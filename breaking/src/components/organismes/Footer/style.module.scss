@@ -2,19 +2,14 @@
 
 .footer {
   @extend %container;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  width: 100%;
   @extend %flex;
   @include font($height: 1.5rem, $size: 1rem);
-  max-height: 5rem;
+  height: 5rem;
   @include media-tablet {
-    max-height: 4rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    height: 4rem;
   }
   @include media-mobile {
-    max-height: 3rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    height: 3rem;
   }
 }

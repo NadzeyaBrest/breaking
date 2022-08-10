@@ -1,9 +1,14 @@
 @import "../../../assets/styles/index.scss";
 
-.container {
-  padding: 2.5rem 0 3rem 0;
+.wrapper {
+  @extend %container;
+  padding-bottom: 1rem;
   img {
     margin-right: 0.5rem;
+    animation-name: pulsing;
+    animation-duration: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
   .link {
     color: $color-black;
@@ -15,5 +20,12 @@
   }
   @include media-mobile {
     padding: 1rem 0 1rem 0;
+  }
+}
+@keyframes pulsing {
+  from {
+  }
+  to {
+    transform: translateX(-1rem);
   }
 }

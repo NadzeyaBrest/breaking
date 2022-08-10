@@ -4,11 +4,9 @@
   @extend %container;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem 1.5rem;
-  background-color: $color-bright;
+  gap: 1.5rem 2rem;
   @include media-tablet {
     grid-template-columns: repeat(2, 1fr);
-    padding: 1rem;
   }
   @include media-mobile {
     grid-template-columns: 1fr;

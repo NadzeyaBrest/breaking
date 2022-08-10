@@ -16,7 +16,11 @@ const CardList = ({ persons }) => {
     );
   });
 
-  return <div className={style.grid}>{cardElement}</div>;
+  return (
+    <div>
+      <div className={style.grid}>{cardElement} </div>
+    </div>
+  );
 };
 
 export default CardList;

@@ -1,10 +1,11 @@
 import { persons } from "../reducers/persons";
 import Repository from "../../repository";
 
-export const getPersons = () => async (dispatch) => {
+export const getPersons = (limit) => async (dispatch) => {
   try {
-    const { value, error } =
-      await Repository.PersonsActions.getPersonsFromApi();
+    const { value, error } = await Repository.PersonsActions.getPersonsFromApi(
+      limit
+    );
     if (error) {
       console.log("error getting");
     } else {
