@@ -2,7 +2,12 @@
 
 .wrapper {
   @extend %container;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  @include media-big-tablet {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
   img {
     margin-right: 0.5rem;
     animation-name: pulsing;
@@ -15,7 +20,7 @@
     text-decoration: none;
     @include font($height: 1.5rem, $size: 0.75);
   }
-  @include media-tablet {
+  @include media-big-tablet {
     padding: 1.5rem 0 1.8rem 0;
   }
   @include media-mobile {

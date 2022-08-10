@@ -1,7 +1,10 @@
 @import "../../../assets/styles/index.scss";
-
-.grid {
+.wrapper {
   @extend %container;
+  width: 100vw;
+  background-color: $color-bright;
+}
+.grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem 2rem;

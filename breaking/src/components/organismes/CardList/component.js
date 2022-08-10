@@ -17,7 +17,7 @@ const CardList = ({ persons }) => {
   });
 
   return (
-    <div>
+    <div className={style.wrapper}>
       <div className={style.grid}>{cardElement} </div>
     </div>
   );

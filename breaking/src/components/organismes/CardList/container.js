@@ -13,7 +13,9 @@ const CardListContainer = () => {
     dispatch(getPersons());
   }, []);
 
-  return <CardList persons={persons} />;
+  return <div >
+    <CardList persons={persons} />
+  </div>
 };
 
 export const container = CardListContainer;

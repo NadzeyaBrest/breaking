@@ -3,13 +3,8 @@
 .footer {
   @extend %container;
   width: 100%;
-  @extend %flex;
-  @include font($height: 1.5rem, $size: 1rem);
+  display: flex;
   height: 5rem;
-  @include media-tablet {
-    height: 4rem;
-  }
-  @include media-mobile {
-    height: 3rem;
-  }
+  align-items: center;
+  justify-content: space-between;
 }

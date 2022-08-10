@@ -1,8 +1,9 @@
 @import "../../../assets/styles/index.scss";
 
 .item {
-  @extend %container;
   display: flex;
+  justify-content: flex-start;
+
   border-radius: 0.25rem;
   @include media-tablet {
     flex-direction: column;
@@ -10,18 +11,20 @@
     align-items: center;
   }
   .img {
-    max-width: 36.5rem;
-    max-height: 36.5rem;
+    width: 36.5rem;
+    height: 36.5rem;
+    padding-bottom: 10.4rem;
     @include media-big-tablet {
-      max-width: 25rem;
+      width: 25rem;
       height: auto;
+      padding-bottom: 1rem;
     }
-    // @include media-mobile {
-    //   max-width: 15rem;
-    // }
-    // @include media-mobilesmall {
-    //   max-width: 8rem;
-    // }
+    @include media-tablet {
+      width: 20rem;
+    }
+    @include media-mobile {
+      width: 15rem;
+    }
 
     img {
       width: 100%;
@@ -29,14 +32,13 @@
     }
   }
   .content {
-    padding-left: 6.44rem;
-    max-width: 25.6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    margin-left: 6.5rem;
     @include media-tablet {
       padding-left: 0;
+      margin-left: 0rem;
     }
-    // @include media-mobile {
-    //   padding-left: 2rem;
-    // }
 
     .status {
       color: $color-addition-bright;
@@ -47,52 +49,48 @@
       align-self: flex-start;
       letter-spacing: 0.1rem;
       font-variant: small-caps;
-      // @include media-tablet {
-      //   padding: 0.3rem 0.5rem;
-      //   @include font($size: 0.7rem, $height: 0.8rem);
-      // }
+      @include media-big-tablet {
+        @include font($size: 1rem, $height: 1.2rem);
+      }
     }
     .name {
-      margin: 2rem 0 1rem 0;
+      margin: 1rem 0 1rem 0;
       color: $color-black;
       @include font($size: 2rem, $height: 2.5rem);
-      // @include media-tablet {
-      //   @include font($height: 1.2rem, $size: 0.9rem);
-      //   margin: 1.3rem 0 0.65rem 0;
-      // }
-    }
-    .date {
-      margin-bottom: 1rem;
-      @include font($size: 1rem, $height: 1.5rem);
-      // @include media-tablet {
-      //   @include font($height: 1.2rem, $size: 0.6rem);
-      //   margin-bottom: 0.5rem;
-      // }
-    }
-    .nick {
-      margin-bottom: 2rem;
-      @include font($size: 1rem, $height: 1.5rem);
-      // @include media-tablet {
-      //   @include font($height: 1.2rem, $size: 0.6rem);
-      //   margin-bottom: 1rem;
-      // }
-    }
-    .quote {
-      @include font($size: 1rem, $height: 1.5rem);
-      // @include media-tablet {
-      //   @include font($height: 1.2rem, $size: 0.6rem);
-      // }
-    }
-    .determinaton {
-      @include font($size: 1rem, $height: 1.5rem);
-      color: $color-black;
-      // opacity: 0.4;
-      // @include media-tablet {
-      //   @include font($height: 1.2rem, $size: 0.6rem);
-      // }
+      @include media-big-tablet {
+        margin: 1.3rem 0 0.65rem 0;
+      }
     }
   }
 }
-// @media screen and (max-width: 60rem){
-
-// }
+.date {
+  margin-bottom: 1rem;
+  @include font($size: 1rem, $height: 1.5rem);
+  @include media-big-tablet {
+    @include font($height: 1.8rem, $size: 1.2rem);
+    @include font($height: 1.8rem, $size: 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+}
+.nick {
+  margin-bottom: 2rem;
+  @include font($size: 1rem, $height: 1.5rem);
+  @include media-tablet {
+    @include font($height: 1.8rem, $size: 1.2rem);
+    margin-bottom: 1rem;
+  }
+}
+.quote {
+  @include font($size: 1rem, $height: 1.5rem);
+  @include media-tablet {
+    @include font($height: 1.8rem, $size: 1.2rem);
+  }
+}
+.determinaton {
+  @include font($size: 1rem, $height: 1.5rem);
+  color: $color-black;
+  opacity: 0.4;
+  @include media-tablet {
+    @include font($height: 1.2rem, $size: 1rem);
+  }
+}

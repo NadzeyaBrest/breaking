@@ -3,12 +3,8 @@
 .header {
   @extend %container;
   width: 100%;
-  @extend %flex;
+  display: flex;
   height: 5rem;
-  @include media-tablet {
-    height: 4rem;
-  }
-  @include media-mobile {
-    height: 3rem;
-  }
+  align-items: center;
+  justify-content: space-between;
 }
