@@ -8,14 +8,17 @@ import CardList from "./component";
 
 const CardListContainer = () => {
   const persons = useSelector((state) => state.persons.persons);
+  const limit = useSelector((state) => state.persons.limit);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPersons());
-  }, []);
+    dispatch(getPersons(limit));
+  }, [limit]);
 
-  return <div >
-    <CardList persons={persons} />
-  </div>
+  return (
+    <div>
+      <CardList persons={persons} />
+    </div>
+  );
 };
 
 export const container = CardListContainer;

@@ -1,7 +1,8 @@
 @import "../../../assets/styles/index.scss";
 .wrapper {
   @extend %container;
-  width: 100vw;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   background-color: $color-bright;
 }
 .grid {

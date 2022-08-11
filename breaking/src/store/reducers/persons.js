@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   persons: [],
   person: {},
-  limit: 9,
+  limit: 15,
 };
 
 export const persons = createSlice({
@@ -15,6 +15,9 @@ export const persons = createSlice({
     },
     setPerson(state, { payload }) {
       state.person = payload;
+    },
+    setLimit(state, { payload }) {
+      state.limit = payload;
     },
   },
 });

@@ -1,14 +1,14 @@
 import Connector from "../connector";
 
 class PersonsActions {
-  getPersonsFromApi = async (numberOfCard) => {
-    console.log(numberOfCard);
+  getPersonsFromApi = async (limit) => {
+    console.log(limit);
     const result = {
       value: null,
       error: null,
     };
     try {
-      const response = await Connector.connector.get(`/characters?limit=${10}`);
+      const response = await Connector.connector.get(`/characters?limit=${limit}`);
       result.value = response.data;
     } catch (error) {
       result.error = error;
