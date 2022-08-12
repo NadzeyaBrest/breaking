@@ -3,7 +3,6 @@ import style from "./style.module.scss";
 import { persons } from "../../../store/reducers/persons";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import SwitchNumberOfCard from "./component";
-// import { limit } from "../../../store/reducers/limit";
 
 const SwitchNumberOfCardContainer = () => {
   const [buttons] = useState([10, 15, 20, 25, 30]);

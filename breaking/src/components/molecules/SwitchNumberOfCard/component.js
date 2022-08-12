@@ -6,7 +6,11 @@ const SwitchNumberOfCard = ({ changeStateLimit, buttons, limit }) => {
     let buttonStyle =
       item === limit ? style.button + " " + style.colored : style.button;
     return (
-      <button onClick={() => changeStateLimit(item)} className={buttonStyle}>
+      <button
+        key={item}
+        onClick={() => changeStateLimit(item)}
+        className={buttonStyle}
+      >
         {item}
       </button>
     );
