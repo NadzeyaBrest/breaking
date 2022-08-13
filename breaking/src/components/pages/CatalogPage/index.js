@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./style.module.scss";
 import CardList from "../../organismes/CardList";
-import SwitchNumberOfCard from "../../molecules/SwitchNumberOfCard";
+import CatalogSetting from "../../organismes/CatalogSetting";
 
 const CatalogPage = () => {
   return (
     <div className={style.wrapper}>
       <CardList />
-      <SwitchNumberOfCard />
+      <CatalogSetting />
     </div>
   );
 };

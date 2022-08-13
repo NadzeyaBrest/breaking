@@ -4,6 +4,7 @@ const initialState = {
   persons: [],
   person: {},
   limit: 15,
+  offset: 0,
 };
 
 export const persons = createSlice({
@@ -18,6 +19,9 @@ export const persons = createSlice({
     },
     setLimit(state, { payload }) {
       state.limit = payload;
+    },
+    setOffset(state, { payload }) {
+      state.offset = payload;
     },
   },
 });
