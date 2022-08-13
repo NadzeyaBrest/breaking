@@ -5,6 +5,7 @@ const initialState = {
   person: {},
   limit: 15,
   offset: 0,
+  quote: {},
 };
 
 export const persons = createSlice({
@@ -22,6 +23,9 @@ export const persons = createSlice({
     },
     setOffset(state, { payload }) {
       state.offset = payload;
+    },
+    setQuote(state, { payload }) {
+      state.quote = payload;
     },
   },
 });

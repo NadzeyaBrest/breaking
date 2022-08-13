@@ -30,5 +30,18 @@ class PersonsActions {
     }
     return result;
   };
+  getQuoteFromApi = async (id) => {
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await Connector.connector.get(`/quotes/${id}`);
+      result.value = response.data[0];
+    } catch (error) {
+      result.error = error;
+    }
+    return result;
+  };
 }
 export default new PersonsActions();
