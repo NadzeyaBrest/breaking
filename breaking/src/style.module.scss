@@ -1,0 +1,10 @@
+@import "./assets/styles/index.scss";
+.around {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 1 auto;
+  background-color: $color-bright;
+}

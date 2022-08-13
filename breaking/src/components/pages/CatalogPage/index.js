@@ -1,15 +1,13 @@
 import React from "react";
-import Header from "../../organismes/Header";
-import Footer from "../../organismes/Footer";
-import Main from "../../organismes/Main";
 import style from "./style.module.scss";
+import CardList from "../../organismes/CardList";
+import SwitchNumberOfCard from "../../molecules/SwitchNumberOfCard";
 
 const CatalogPage = () => {
   return (
     <div className={style.wrapper}>
-      <Header />
-      <Main />
-      <Footer />
+      <CardList />
+      <SwitchNumberOfCard />
     </div>
   );
 };

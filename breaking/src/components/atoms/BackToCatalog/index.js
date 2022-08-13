@@ -3,9 +3,9 @@ import style from "./style.module.scss";
 import { NavLink } from "react-router-dom";
 import arrow from "../../../assets/images/arrow.svg";
 
-const Arrow = () => {
+const BackToCatalog = () => {
   return (
-    <div className={style.container}>
+    <div className={style.wrapper}>
       <img src={arrow} className={style.arrow} alt="arrow" />
       <NavLink className={style.link} to="/catalog">
         Назад в Каталог
@@ -13,4 +13,4 @@ const Arrow = () => {
     </div>
   );
 };
-export default Arrow;
+export default BackToCatalog;

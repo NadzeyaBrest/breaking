@@ -6,8 +6,6 @@ import { useLocation } from "react-router-dom";
 
 const Button = () => {
   const location = useLocation();
-  console.log(location.pathname);
-
   const buttonColored =
     location.pathname === "/catalog"
       ? style.button + " " + style.colored
@@ -15,9 +13,7 @@ const Button = () => {
   return (
     <NavLink to="/catalog" className={buttonColored}>
       <Burger />
-      <NavLink to="/catalog" className={style.text}>
-        Kаталог
-      </NavLink>
+      <span className={style.text}>Kаталог</span>
     </NavLink>
   );
 };

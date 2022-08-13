@@ -5,7 +5,7 @@ import style from "./style.module.scss";
 
 const Logo = () => {
   return (
-    <NavLink to="/main" className={style.logo}>
+    <NavLink to="/" className={style.logo}>
       <img src={logo} alt="logo"></img>
     </NavLink>
   );

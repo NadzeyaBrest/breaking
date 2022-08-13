@@ -2,22 +2,22 @@ import React from "react";
 import style from "./style.module.scss";
 import { NavLink } from "react-router-dom";
 
-const Card = (props) => {
+const Card = ({ id, img, status, name, date }) => {
   return (
-    <div className={style.item}>
-      <div className={style.img}>
-        <img src={props.img} alt="pearsonimg" />
-      </div>
-      <div className={style.content}>
-        <NavLink to="/catalog3" className={style.status}>
-          {props.status}
-        </NavLink>
-        <div>
-          <p className={style.name}>{props.name}</p>
-          <p className={style.date}>{props.date}</p>
+    <NavLink to={`/catalog/${id}`}>
+      <div className={style.item}>
+        <div className={style.img}>
+          <img src={img} alt="pearsonimg" />
+        </div>
+        <div className={style.content}>
+          <div className={style.status}>{status}</div>
+          <div>
+            <p className={style.name}>{name}</p>
+            <p className={style.date}>{date}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

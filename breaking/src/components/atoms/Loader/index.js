@@ -1,12 +1,12 @@
 import React from "react";
+import loader from "../../../assets/images/loader.gif";
 import style from "./style.module.scss";
-import MainPicture from "../../molecules/MainPicture";
 
-const MainPage = () => {
+const Loader = () => {
   return (
     <div className={style.wrapper}>
-      <MainPicture />
+      <img src={loader} />
     </div>
   );
 };
-export default MainPage;
+export default Loader;

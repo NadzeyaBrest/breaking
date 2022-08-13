@@ -1,0 +1,36 @@
+@import "../../../assets/styles/index.scss";
+
+.wrapper {
+  @extend %container;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  @include media-big-tablet {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  img {
+    margin-right: 0.5rem;
+    animation-name: pulsing;
+    animation-duration: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  .link {
+    color: $color-black;
+    text-decoration: none;
+    @include font($height: 1.5rem, $size: 0.75);
+  }
+  @include media-big-tablet {
+    padding: 1.5rem 0 1.8rem 0;
+  }
+  @include media-mobile {
+    padding: 1rem 0 1rem 0;
+  }
+}
+@keyframes pulsing {
+  from {
+  }
+  to {
+    transform: translateX(-1rem);
+  }
+}

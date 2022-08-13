@@ -1,0 +1,9 @@
+@import "../../../assets/styles/index.scss";
+
+.main {
+  img {
+    width: 100%;
+    height: calc(100vh - 5rem - 5rem);
+    object-fit: cover;
+  }
+}
