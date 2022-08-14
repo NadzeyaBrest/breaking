@@ -43,5 +43,22 @@ class PersonsActions {
     }
     return result;
   };
+  getPersonFromApiName = async (name) => {
+    console.log(name);
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await Connector.connector.get(
+        `/characters?name=${name}`
+      );
+      result.value = response.data;
+      console.log(result.value);
+    } catch (error) {
+      result.error = error;
+    }
+    return result;
+  };
 }
 export default new PersonsActions();

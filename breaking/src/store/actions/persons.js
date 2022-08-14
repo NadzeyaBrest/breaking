@@ -46,3 +46,19 @@ export const getQuote = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+export const getPersonViaName = (name) => async (dispatch) => {
+  console.log(name);
+  try {
+    const { value, error } =
+      await Repository.PersonsActions.getPersonFromApiName(name);
+
+    if (error) {
+      console.log("error getting");
+    } else {
+      dispatch(persons.actions.setName(value));
+      console.log(value);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
