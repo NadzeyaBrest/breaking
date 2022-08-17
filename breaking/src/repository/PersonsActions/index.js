@@ -2,7 +2,6 @@ import Connector from "../connector";
 
 class PersonsActions {
   getPersonsFromApi = async (limit, offset) => {
-    console.log(offset);
     const result = {
       value: null,
       error: null,
@@ -44,7 +43,6 @@ class PersonsActions {
     return result;
   };
   getPersonFromApiName = async (name) => {
-    console.log(name);
     const result = {
       value: null,
       error: null,
@@ -54,7 +52,19 @@ class PersonsActions {
         `/characters?name=${name}`
       );
       result.value = response.data;
-      console.log(result.value);
+    } catch (error) {
+      result.error = error;
+    }
+    return result;
+  };
+  getTotalPersonsFromApi = async (limit, offset) => {
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await Connector.connector.get("/characters");
+      result.value = response.data;
     } catch (error) {
       result.error = error;
     }

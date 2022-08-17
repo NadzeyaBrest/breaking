@@ -1,46 +1,77 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import style from "./style.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { persons } from "../../../store/reducers/persons";
 import arrow from "../../../assets/images/arrow.svg";
+import { getAmount } from "../../../store/actions/persons";
 
 const Pagination = () => {
   let dispatch = useDispatch();
-  const [buttons] = useState([1, 2, 3, 4, 5]);
+  useEffect(() => {
+    dispatch(getAmount());
+  }, []);
+
+  let totalPersons = useSelector((state) => state.persons.totalAmountPersons);
+
+  let currentPage = useSelector(
+    (state) => state.persons.currentButtonPagination
+  );
   let limit = useSelector((state) => state.persons.limit);
   let offsetOutOffStage = useSelector((state) => state.persons.offset);
+  let numberOfPages = totalPersons.length;
+  let amountOfPages = Math.ceil(numberOfPages / limit);
 
+  let buttons = [];
+  for (let i = 1; i <= amountOfPages; i++) {
+    buttons.push(i);
+  }
+  const changeStateCurrentButton = (number) => {
+    dispatch(persons.actions.setCurrentButton(number));
+  };
   const setPaginationNumber = (number, limit) => {
     let offset = number * limit - limit;
     dispatch(persons.actions.setOffset(offset));
+    changeStateCurrentButton(number);
+    console.log(`ofset${offset}`);
+    console.log(`number${number}`);
   };
 
   const setPaginationNumberViaArrowRight = () => {
-    let number = (offsetOutOffStage + limit) / limit;
-    console.log(number);
-    if (number === 5) {
-      number = 0;
+    if (currentPage === amountOfPages) {
+      currentPage = 1;
+      let offset = 0;
+      dispatch(persons.actions.setOffset(offset));
+      changeStateCurrentButton(currentPage);
+    } else {
+      currentPage++;
+      let offset = currentPage * limit - limit;
+      dispatch(persons.actions.setOffset(offset));
+      changeStateCurrentButton(currentPage);
     }
-    let offset = (number + 1) * limit - limit;
-    dispatch(persons.actions.setOffset(offset));
   };
 
   const setPaginationNumberViaArrowLeft = () => {
-    let number = (offsetOutOffStage + limit) / limit;
-    console.log(number);
-    if (number === 0) {
-      number = 5;
+    if (currentPage === 1) {
+      currentPage = amountOfPages;
+      let offset = (currentPage - 1) * limit - limit;
+      dispatch(persons.actions.setOffset(offset));
+      changeStateCurrentButton(currentPage);
+      console.log(`ofset${offset}`);
+      console.log(`currentPage${currentPage}`);
+    } else {
+      currentPage--;
+      let offset = currentPage * limit - limit;
+      dispatch(persons.actions.setOffset(offset));
+      changeStateCurrentButton(currentPage);
+      console.log(`ofset${offset}`);
+      console.log(`currentPage${currentPage}`);
     }
-    let offset = (number - 1) * limit - limit;
-    dispatch(persons.actions.setOffset(offset));
   };
 
   let btnElement = buttons.map((item) => {
     let btnStyle =
-      (offsetOutOffStage + limit) / limit === item
-        ? style.colored + " " + style.button
-        : style.button;
+      currentPage === item ? style.colored + " " + style.button : style.button;
     return (
       <button
         key={item}
@@ -51,6 +82,7 @@ const Pagination = () => {
       </button>
     );
   });
+
   return (
     <div className={style.wrapper}>
       <div>{btnElement}</div>
@@ -59,13 +91,13 @@ const Pagination = () => {
           className={style.arrayLeft}
           alt="array-left"
           src={arrow}
-          onClick={() => setPaginationNumberViaArrowLeft()}
+          onClick={setPaginationNumberViaArrowLeft}
         />
         <img
           className={style.arrayRight}
           alt="array-right"
           src={arrow}
-          onClick={() => setPaginationNumberViaArrowRight()}
+          onClick={setPaginationNumberViaArrowRight}
         />
       </span>
     </div>

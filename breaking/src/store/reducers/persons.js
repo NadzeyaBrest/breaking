@@ -6,7 +6,9 @@ const initialState = {
   limit: 15,
   offset: 0,
   quote: {},
-  name: {},
+  name: [],
+  currentButtonPagination: 1,
+  totalAmountPersons: [],
 };
 
 export const persons = createSlice({
@@ -30,6 +32,15 @@ export const persons = createSlice({
     },
     setName(state, { payload }) {
       state.name = payload;
+    },
+    resetName(state, { payload }) {
+      state.name = payload;
+    },
+    setTotalAmount(state, { payload }) {
+      state.totalAmountPersons = payload;
+    },
+    setCurrentButton(state, { payload }) {
+      state.currentButtonPagination = payload;
     },
   },
 });

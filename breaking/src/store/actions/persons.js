@@ -56,7 +56,20 @@ export const getPersonViaName = (name) => async (dispatch) => {
       console.log("error getting");
     } else {
       dispatch(persons.actions.setName(value));
-      console.log(value);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getAmount = () => async (dispatch) => {
+  try {
+    const { value, error } =
+      await Repository.PersonsActions.getTotalPersonsFromApi();
+
+    if (error) {
+      console.log("error getting");
+    } else {
+      dispatch(persons.actions.setTotalAmount(value));
     }
   } catch (error) {
     console.log(error);
