@@ -9,10 +9,12 @@ import CardList from "./component";
 const CardListContainer = () => {
   const persons = useSelector((state) => state.persons.persons);
   const limit = useSelector((state) => state.persons.limit);
+  const offset = useSelector((state) => state.persons.offset);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPersons(limit));
-  }, [limit]);
+    dispatch(getPersons(limit, offset));
+  }, [limit, offset]);
 
   return (
     <div>

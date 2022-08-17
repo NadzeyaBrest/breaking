@@ -1,0 +1,19 @@
+@import "../../../assets/styles/index.scss";
+
+.wrapper {
+  @extend %container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  gap: 1.5rem 1.5rem;
+  flex-wrap: wrap;
+  @include font($height: 6rem, $size: 4rem);
+
+  @include media-tablet {
+    padding: 1.5rem 0;
+  }
+  @include media-mobile {
+    flex-direction: column;
+  }
+}

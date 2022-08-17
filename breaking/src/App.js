@@ -8,6 +8,7 @@ import Loader from "./components/atoms/Loader";
 const CatalogPage = React.lazy(() => import("./components/pages/CatalogPage"));
 const MainPage = React.lazy(() => import("./components/pages/MainPage"));
 const PersonPage = React.lazy(() => import("./components/pages/PersonPage"));
+const SearchPage = React.lazy(() => import("./components/pages/SearchPage"));
 
 const App = () => {
   return (
@@ -17,9 +18,10 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <div className={style.content}>
             <Routes>
-              <Route path="/" element={<MainPage />} />+
+              <Route path="/" element={<MainPage />} />
               <Route path="/catalog" element={<CatalogPage />} />
               <Route path="/catalog/:id" element={<PersonPage />} />
+              <Route path="/catalog/search" element={<SearchPage />} />
             </Routes>
           </div>
         </Suspense>

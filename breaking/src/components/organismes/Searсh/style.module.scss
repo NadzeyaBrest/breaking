@@ -1,0 +1,42 @@
+@import "../../../assets/styles/index.scss";
+
+.wrapper {
+  @extend %container;
+}
+.search {
+  display: flex;
+  padding: 1rem 1.5rem;
+  max-width: 49rem;
+  box-shadow: 0 0.25rem 0.5rem 0 $color-shadow;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  background-color: $color-white;
+  margin-top: 5rem;
+  @include font($height: 1.5rem, $size: 1rem);
+  @include media-big-tablet {
+    max-width: 35rem;
+    margin-top: 4rem;
+  }
+  @include media-tablet {
+    max-width: 25rem;
+    margin-top: 3rem;
+  }
+}
+
+input {
+  width: 100%;
+  background-color: $color-white;
+  @include font($height: 1.5rem, $size: 0.875rem);
+}
+
+.button {
+  cursor: pointer;
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include font($height: 1.5rem, $size: 1rem);
+}
+img {
+  margin-right: 0.5rem;
+}
