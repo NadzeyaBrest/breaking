@@ -6,6 +6,7 @@ const initialState = {
   limit: 15,
   offset: 0,
   quote: {},
+  randomQuote: {},
   name: [],
   currentButtonPagination: 1,
   totalAmountPersons: [],
@@ -40,6 +41,12 @@ export const persons = createSlice({
     setCurrentButton(state, { payload }) {
       state.currentButtonPagination = payload;
     },
+    setRandomQuote(state, { payload }) {
+      state.randomQuote = payload;
+    },
+    clear(state){
+      state.person={}
+    }
   },
 });
 export default persons.reducer;

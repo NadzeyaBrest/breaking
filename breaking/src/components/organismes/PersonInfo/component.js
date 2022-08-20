@@ -12,7 +12,6 @@ const PersonInfo = ({ birthday, img, status, name, nick, quote, author }) => {
         name={name}
         nick={nick}
         quote={quote}
-        author={author}
       />
     </div>
   );

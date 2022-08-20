@@ -1,0 +1,10 @@
+@import "../../../assets/styles/index.scss";
+.container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttonsContainer {
+  width: 3rem;
+}

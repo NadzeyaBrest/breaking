@@ -4,6 +4,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getPersons } from "../../../store/actions/persons";
+import { clearTest } from "../../../store/actions/persons";
 import CardList from "./component";
 
 const CardListContainer = () => {
@@ -12,10 +13,13 @@ const CardListContainer = () => {
   const offset = useSelector((state) => state.persons.offset);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getPersons(limit, offset));
   }, [limit, offset]);
-
+  useEffect(() => {
+    dispatch(clearTest());
+  }, []);
   return (
     <div>
       <CardList persons={persons} />

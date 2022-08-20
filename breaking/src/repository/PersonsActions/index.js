@@ -29,16 +29,30 @@ class PersonsActions {
     }
     return result;
   };
-  getQuoteFromApi = async (id) => {
-    console.log(id);
+  getRandomQuoteFromApi = async () => {
     const result = {
       value: null,
       error: null,
     };
     try {
-      const response = await Connector.connector.get(`/quote?author=${id}`);
-      result.value = response.data[0] || "данные отсутствуют";
+      const response = await Connector.connector.get("/quote/random");
+      result.value = response.data[0];
       console.log(result.value);
+    } catch (error) {
+      result.error = error;
+    }
+    return result;
+  };
+  getQuoteFromApi = async (nameForQuotes) => {
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await Connector.connector.get(
+        `/quote?author=${nameForQuotes}`
+      );
+      result.value = response.data[0];
     } catch (error) {
       result.error = error;
     }

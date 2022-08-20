@@ -46,15 +46,15 @@ export const getQuote = (id) => async (dispatch) => {
     console.log(error);
   }
 };
-export const getTotalQuote = () => async (dispatch) => {
+export const getRandomQuote = (random) => async (dispatch) => {
   try {
     const { value, error } =
-      await Repository.PersonsActions.getQuoteFromApiTotal();
+      await Repository.PersonsActions.getRandomQuoteFromApi(random);
 
     if (error) {
       console.log("error getting");
     } else {
-      dispatch(persons.actions.setTotalQuote(value));
+      dispatch(persons.actions.setRandomQuote(value));
     }
   } catch (error) {
     console.log(error);
@@ -88,4 +88,7 @@ export const getAmount = (limit, offset) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+};
+export const clearTest = () => (dispatch) => {
+  dispatch(persons.actions.clear());
 };
