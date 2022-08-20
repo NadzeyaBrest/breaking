@@ -14,7 +14,7 @@ const PaginationSecond = () => {
   }, []);
   let allPersons = useSelector((state) => state.persons.totalAmountPersons);
   let limit = useSelector((state) => state.persons.limit);
-  let amountOfButtons = Math.ceil(allPersons.length / limit) || 5; // Добавил || 5
+  let amountOfButtons = Math.ceil(allPersons.length / limit);
   let currentButton = useSelector(
     (state) => state.persons.currentButtonPagination
   );
@@ -23,13 +23,8 @@ const PaginationSecond = () => {
   for (let i = 1; i <= amountOfButtons; i++) {
     arrOfButtons.push(i);
   }
-  if (currentButton > arrOfButtons.length) {
-    // ты выводишь по 15 песонажей и находишься на 5 странице. Потом Нажимаешь выводить по 30 персонажей на той же 5 странице.
-    currentButton = arrOfButtons.length; // Этот if для того чтобы пересчитались страницы и была активная последняя кнопка(Понятно?)) Мне лично нет) Мне непонятно, что я тут в комментарии написал) Но ты разберёшься)
-  }
+
   const setCurrentIntoState = (number) => {
-    let offset = number * limit - limit; // Добавил с твоей Pagination чтобы персы менялись
-    dispatch(persons.actions.setOffset(offset)); // // Добавил с твоей Pagination чтобы персы менялись
     dispatch(persons.actions.setCurrentButton(number));
     console.log(number);
   };
@@ -42,18 +37,12 @@ const PaginationSecond = () => {
     let dotsRight = " ...";
 
     let tempArrOfButtons = [...arrOfButtons];
-
-    if (arrOfButtons.length < 5) {
-      // добавил if, просто чтобы урезать пагинацию
-      tempArrOfButtons = arrOfButtons;
-    } else if (currentButton >= 1 && currentButton <= 2) {
-      // тут уже else if т.к сверху if добавили
-      tempArrOfButtons = [1, 2, 3, dotsInitial, amountOfButtons]; // Добавил 3
+    if (currentButton >= 1 && currentButton <= 2) {
+      tempArrOfButtons = [1, 2, dotsInitial, amountOfButtons];
     } else if (currentButton === 3) {
       let sliced = arrOfButtons.slice(0, 4);
       tempArrOfButtons = [...sliced, dotsInitial, arrOfButtons.length];
-    } else if (currentButton >= 4 && currentButton < arrOfButtons.length - 2) {
-      // Добавил = currentButton >= 4
+    } else if (currentButton > 4 && currentButton < arrOfButtons.length - 2) {
       let sliced1 = arrOfButtons.slice(currentButton - 2, currentButton);
       let sliced2 = arrOfButtons.slice(currentButton, currentButton + 1);
       tempArrOfButtons = [
@@ -78,7 +67,7 @@ const PaginationSecond = () => {
       setCurrentIntoState(number);
     }
     setCurrentArrayOfButtons(tempArrOfButtons);
-  }, [currentButton, limit]); // Добавил ещё limit
+  }, [currentButton]);
 
   const setPaginationNumberViaArrowRight = () => {
     if (currentButton === amountOfButtons) {
@@ -135,13 +124,11 @@ const PaginationSecond = () => {
           onClick={setPaginationNumberViaArrowLeft}
           className={style.arrayLeft}
           src={array}
-          alt="array"
         />
         <img
           onClick={setPaginationNumberViaArrowRight}
           className={style.arrayRight}
           src={array}
-          alt="array"
         />
       </span>
     </div>

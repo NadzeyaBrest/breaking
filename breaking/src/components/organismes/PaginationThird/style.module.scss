@@ -1,0 +1,23 @@
+@import "../../../assets/styles/index.scss";
+
+.button {
+  width: 2rem;
+  height: 2rem;
+  @include font($height: 1.5rem, $size: 1rem);
+  box-shadow: 0 0.25rem 0.5rem 0 $color-shadow;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.colored {
+  color: $color-main;
+}
+.arrowRight {
+  transform: rotate(180deg);
+  margin-left: 1.5rem;
+}
+.arrowLeft {
+  margin-left: 2.75rem;
+}
+.disabled {
+  opacity: 0.3;
+}

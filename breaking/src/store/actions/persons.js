@@ -46,6 +46,20 @@ export const getQuote = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+export const getTotalQuote = () => async (dispatch) => {
+  try {
+    const { value, error } =
+      await Repository.PersonsActions.getQuoteFromApiTotal();
+
+    if (error) {
+      console.log("error getting");
+    } else {
+      dispatch(persons.actions.setTotalQuote(value));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const getPersonViaName = (name) => async (dispatch) => {
   console.log(name);
   try {
@@ -61,7 +75,7 @@ export const getPersonViaName = (name) => async (dispatch) => {
     console.log(error);
   }
 };
-export const getAmount = () => async (dispatch) => {
+export const getAmount = (limit, offset) => async (dispatch) => {
   try {
     const { value, error } =
       await Repository.PersonsActions.getTotalPersonsFromApi();

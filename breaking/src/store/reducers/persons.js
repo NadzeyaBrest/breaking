@@ -33,9 +33,7 @@ export const persons = createSlice({
     setName(state, { payload }) {
       state.name = payload;
     },
-    resetName(state, { payload }) {
-      state.name = payload;
-    },
+
     setTotalAmount(state, { payload }) {
       state.totalAmountPersons = payload;
     },

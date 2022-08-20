@@ -30,18 +30,21 @@ class PersonsActions {
     return result;
   };
   getQuoteFromApi = async (id) => {
+    console.log(id);
     const result = {
       value: null,
       error: null,
     };
     try {
-      const response = await Connector.connector.get(`/quotes/${id}`);
-      result.value = response.data[0];
+      const response = await Connector.connector.get(`/quote?author=${id}`);
+      result.value = response.data[0] || "данные отсутствуют";
+      console.log(result.value);
     } catch (error) {
       result.error = error;
     }
     return result;
   };
+
   getPersonFromApiName = async (name) => {
     const result = {
       value: null,
@@ -57,7 +60,7 @@ class PersonsActions {
     }
     return result;
   };
-  getTotalPersonsFromApi = async (limit, offset) => {
+  getTotalPersonsFromApi = async () => {
     const result = {
       value: null,
       error: null,

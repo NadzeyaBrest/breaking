@@ -9,15 +9,17 @@ import PersonInfo from "./component";
 const PersonInfoContainer = () => {
   const { id } = useParams();
   const person = useSelector((state) => state.persons.person);
-  const quote = useSelector((state) => state.persons.quote);
+  let nameForQuotes = person.name;
 
+  console.log(nameForQuotes);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPerson(id));
   }, []);
   useEffect(() => {
-    dispatch(getQuote(id));
+    dispatch(getQuote(nameForQuotes));
   }, []);
+  const quote = useSelector((state) => state.persons.quote);
 
   return (
     <PersonInfo
