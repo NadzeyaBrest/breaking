@@ -10,6 +10,8 @@ const initialState = {
   name: [],
   currentButtonPagination: 1,
   totalAmountPersons: [],
+  isLoading: false,
+  toggled: true,
 };
 
 export const persons = createSlice({
@@ -44,9 +46,18 @@ export const persons = createSlice({
     setRandomQuote(state, { payload }) {
       state.randomQuote = payload;
     },
-    clear(state){
-      state.person={}
-    }
+    clear(state) {
+      state.person = {};
+    },
+    clearName(state) {
+      state.name = [];
+    },
+    setLoader(state, { payload }) {
+      state.isLoading = payload;
+    },
+    setToggledIntoState(state, { payload }) {
+      state.toggled = payload;
+    },
   },
 });
 export default persons.reducer;

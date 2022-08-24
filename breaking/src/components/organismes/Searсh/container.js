@@ -8,7 +8,6 @@ import Search from "./component";
 const SearchContainer = () => {
   let [value, setValue] = useState("");
   let navigate = useNavigate();
-
   let dispatch = useDispatch();
   const search = (name) => {
     dispatch(getPersonViaName(name));

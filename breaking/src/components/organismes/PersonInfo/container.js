@@ -22,19 +22,14 @@ const PersonInfoContainer = () => {
   useEffect(() => {
     dispatch(getQuote(nameForQuotes));
   }, [person]);
-  let randomFunction = (min, max) => {
-    let random = min + Math.random() * (max + 1 - min);
-    return Math.trunc(random);
-  };
-  let random = randomFunction(0, 80);
 
   useEffect(() => {
-    dispatch(getRandomQuote(random));
+    dispatch(getRandomQuote());
   }, []);
 
   let quoteFromState = useSelector((state) => state.persons.quote);
   let randomQuote = useSelector((state) => state.persons.randomQuote);
-  console.log(randomQuote);
+  let isLoading = useSelector((state) => state.persons.isLoading);
 
   let result = quoteFromState ? quoteFromState : randomQuote;
 
@@ -46,6 +41,7 @@ const PersonInfoContainer = () => {
       name={person.name}
       nick={person.nickname}
       quote={result.quote}
+      isLoading={isLoading}
     />
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./style.module.scss";
 import Card from "../../molecules/Card";
+import loader from "../../../assets/images/loader.gif";
 
-const CardList = ({ persons }) => {
+const CardList = ({ persons, isLoading, toggled }) => {
   let cardElement = persons.map((card) => {
     return (
       <Card
@@ -15,10 +16,16 @@ const CardList = ({ persons }) => {
       />
     );
   });
-
+  let choiceOfCardList = toggled ? style.grid : style.row;
   return (
     <div className={style.wrapper}>
-      <div className={style.grid}>{cardElement} </div>
+      {isLoading ? (
+        <div className={style.loader}>
+          <img className={style.loaderImage} src={loader} />
+        </div>
+      ) : (
+        <div className={choiceOfCardList}>{cardElement} </div>
+      )}
     </div>
   );
 };

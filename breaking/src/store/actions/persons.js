@@ -2,6 +2,7 @@ import { persons } from "../reducers/persons";
 import Repository from "../../repository";
 
 export const getPersons = (limit, offset) => async (dispatch) => {
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } = await Repository.PersonsActions.getPersonsFromApi(
       limit,
@@ -15,8 +16,10 @@ export const getPersons = (limit, offset) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
 export const getPerson = (id) => async (dispatch) => {
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } = await Repository.PersonsActions.getPersonFromApi(
       id
@@ -30,6 +33,7 @@ export const getPerson = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
 export const getQuote = (id) => async (dispatch) => {
   try {
@@ -61,7 +65,7 @@ export const getRandomQuote = (random) => async (dispatch) => {
   }
 };
 export const getPersonViaName = (name) => async (dispatch) => {
-  console.log(name);
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } =
       await Repository.PersonsActions.getPersonFromApiName(name);
@@ -74,7 +78,9 @@ export const getPersonViaName = (name) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
+
 export const getAmount = (limit, offset) => async (dispatch) => {
   try {
     const { value, error } =
@@ -91,4 +97,8 @@ export const getAmount = (limit, offset) => async (dispatch) => {
 };
 export const clearTest = () => (dispatch) => {
   dispatch(persons.actions.clear());
+};
+
+export const clearNameFounded = () => (dispatch) => {
+  dispatch(persons.actions.clearName());
 };

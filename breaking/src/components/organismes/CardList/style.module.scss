@@ -5,6 +5,16 @@
   padding-bottom: 2rem;
   background-color: $color-bright;
 }
+.loader {
+  width: 18rem;
+  height: 18rem;
+  margin: 0 auto;
+}
+
+.loaderImage {
+  width: 100%;
+  height: 100%;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,4 +25,7 @@
   @include media-mobile {
     grid-template-columns: 1fr;
   }
+}
+.row {
+  display: block;
 }
