@@ -37,7 +37,6 @@ class PersonsActions {
     try {
       const response = await Connector.connector.get("/quote/random");
       result.value = response.data[0];
-      console.log(result.value);
     } catch (error) {
       result.error = error;
     }

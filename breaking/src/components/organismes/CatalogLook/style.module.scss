@@ -1,10 +1,20 @@
 @import "../../../assets/styles/index.scss";
+
 .container {
+  .catalog {
+    @include font($size: 2rem, $height: 2.5rem);
+  }
   @extend %container;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.buttonsContainer {
-  width: 3rem;
+  margin-top: 5rem;
+  .buttonsContainer {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  .opacityForButton {
+    opacity: 0.3;
+  }
 }

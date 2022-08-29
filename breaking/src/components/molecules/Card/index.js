@@ -10,6 +10,7 @@ const Card = ({ id, img, status, name, date }) => {
   let cardImage = toggled ? style.image : style.imageRow;
   let cardContent = toggled ? style.content : style.contentRow;
   let cardStatus = toggled ? style.status : style.statusRow;
+
   return (
     <NavLink to={`/catalog/${id}`}>
       <div className={cardView}>
@@ -17,11 +18,11 @@ const Card = ({ id, img, status, name, date }) => {
           <img className={cardImage} src={img} alt="pearsonimg" />
         </div>
         <div className={cardContent}>
-          <div className={cardStatus}>{status}</div>
           <div>
-            <p className={style.name}>{name}</p>
-            <p className={style.date}>{date}</p>
+            <span className={cardStatus}>{status}</span>
           </div>
+          <p className={style.name}>{name}</p>
+          <p className={style.date}>{date}</p>
         </div>
       </div>
     </NavLink>

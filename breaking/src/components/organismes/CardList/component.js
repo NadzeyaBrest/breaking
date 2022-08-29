@@ -12,11 +12,13 @@ const CardList = ({ persons, isLoading, toggled }) => {
         img={card.img}
         status={card.status}
         name={card.name}
-        date={card.date}
+        date={card.birthday}
       />
     );
   });
+
   let choiceOfCardList = toggled ? style.grid : style.row;
+  let showTitle = toggled ? style.hide : style.show;
   return (
     <div className={style.wrapper}>
       {isLoading ? (
@@ -24,7 +26,16 @@ const CardList = ({ persons, isLoading, toggled }) => {
           <img className={style.loaderImage} src={loader} />
         </div>
       ) : (
-        <div className={choiceOfCardList}>{cardElement} </div>
+        <div>
+          <div className={showTitle}>
+            <div>
+              <span>Статус</span>
+            </div>
+            <p>Имя</p>
+            <p>Дата Рождения</p>
+          </div>
+          <div className={choiceOfCardList}>{cardElement} </div>
+        </div>
       )}
     </div>
   );

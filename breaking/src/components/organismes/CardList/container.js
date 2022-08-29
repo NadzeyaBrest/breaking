@@ -1,6 +1,4 @@
 import React from "react";
-import style from "./style.module.scss";
-// import Card from "../../molecules/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getPersons } from "../../../store/actions/persons";
@@ -23,7 +21,6 @@ const CardListContainer = () => {
     dispatch(clearTest());
   }, []);
   let toggled = useSelector((state) => state.persons.toggled);
-  console.log(toggled);
 
   return (
     <div>

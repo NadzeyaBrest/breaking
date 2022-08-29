@@ -1,5 +1,8 @@
 @import "../../../assets/styles/index.scss";
-
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
 .button {
   width: 2rem;
   height: 2rem;
