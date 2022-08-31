@@ -5,6 +5,10 @@
   display: flex;
   border-radius: 0.25rem;
   max-width: 23.75rem;
+  @media screen and(max-width:600px) {
+    margin: 0 auto;
+  }
+
   .img {
     width: 7.75rem;
     height: 7.75rem;
