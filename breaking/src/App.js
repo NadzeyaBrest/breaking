@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import React, { Suspense } from "react";
 import Header from "./components/organismes/Header";
 import Footer from "./components/organismes/Footer";
@@ -11,7 +11,7 @@ const SearchPage = React.lazy(() => import("./components/pages/SearchPage"));
 
 const App = () => {
   return (
-    <HashRouter basename="/">
+    <BrowserRouter>
       <div className={style.around}>
         <Header />
         <Suspense fallback={<Loader />}>
@@ -26,7 +26,7 @@ const App = () => {
         </Suspense>
         <Footer />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
