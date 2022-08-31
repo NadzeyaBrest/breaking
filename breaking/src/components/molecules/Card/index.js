@@ -10,7 +10,8 @@ const Card = ({ id, img, status, name, date }) => {
   let cardImage = toggled ? style.image : style.imageRow;
   let cardContent = toggled ? style.content : style.contentRow;
   let cardStatus = toggled ? style.status : style.statusRow;
-
+  let cardName = toggled ? style.name : style.nameRow;
+  let cardBirthday = toggled ? style.date : style.dateRow;
   return (
     <NavLink to={`/catalog/${id}`}>
       <div className={cardView}>
@@ -21,8 +22,8 @@ const Card = ({ id, img, status, name, date }) => {
           <div>
             <span className={cardStatus}>{status}</span>
           </div>
-          <p className={style.name}>{name}</p>
-          <p className={style.date}>{date}</p>
+          <p className={cardName}>{name}</p>
+          <p className={cardBirthday}>{date}</p>
         </div>
       </div>
     </NavLink>

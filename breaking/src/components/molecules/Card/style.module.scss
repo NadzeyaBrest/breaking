@@ -80,13 +80,12 @@
   }
 
   .contentRow {
-    // display: flex;
-    // align-items: center;
-    // width: 60%;
-    // justify-content: space-around;
     display: grid;
     width: 60%;
     grid-template-columns: repeat(3, 1fr);
+    @include media-big-tablet {
+      width: 100%;
+    }
   }
   .statusRow {
     color: $color-addition-bright;
@@ -101,6 +100,25 @@
     @include media-tablet {
       padding: 0.3rem 0.5rem;
       @include font($size: 0.7rem, $height: 0.8rem);
+    }
+    @media screen and(max-width:460px) {
+      @include font($height: 0.6rem, $size: 0.7rem);
+    }
+  }
+  .nameRow {
+    @media screen and (max-width: 620px) {
+      @include font($height: 1rem, $size: 0.9rem);
+    }
+    @media screen and(max-width:460px) {
+      @include font($height: 0.8rem, $size: 0.7rem);
+    }
+  }
+  .dateRow {
+    @media screen and (max-width: 620px) {
+      @include font($height: 1rem, $size: 0.9rem);
+    }
+    @media screen and(max-width:460px) {
+      @include font($height: 0.8rem, $size: 0.7rem);
     }
   }
 }

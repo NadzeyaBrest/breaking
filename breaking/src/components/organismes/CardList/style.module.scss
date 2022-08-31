@@ -1,7 +1,5 @@
 @import "../../../assets/styles/index.scss";
 .wrapper {
-  @extend %container;
-
   padding-bottom: 3.5rem;
   background-color: $color-bright;
 }
@@ -40,4 +38,16 @@
   margin-left: 8rem;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
+  @include media-big-tablet {
+    margin-left: 7rem;
+    width: 85%;
+  }
+  @media screen and(max-width:680px) {
+    width: 80%;
+    @include font($height: 1rem, $size: 0.9rem);
+  }
+  @media screen and(max-width:460px) {
+    @include font($height: 0.8rem, $size: 0.7rem);
+    width: 70%;
+  }
 }

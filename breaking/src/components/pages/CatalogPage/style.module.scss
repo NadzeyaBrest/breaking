@@ -1,4 +1,4 @@
 @import "../../../assets/styles/index.scss";
 .wrapper {
-  padding-bottom: 2rem;
+  @extend %container;
 }

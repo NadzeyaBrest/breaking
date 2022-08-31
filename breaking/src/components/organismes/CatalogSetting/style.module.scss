@@ -1,9 +1,11 @@
 @import "../../../assets/styles/index.scss";
 
 .container {
-  @extend %container;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+  @include media-big-tablet {
+    flex-direction: column;
+  }
 }

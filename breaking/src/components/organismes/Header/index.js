@@ -5,10 +5,12 @@ import style from "./style.module.scss";
 
 const Header = () => {
   return (
-    <header className={style.header}>
-      <Logo />
-      <Button />
-    </header>
+    <div>
+      <header className={style.header}>
+        <Logo />
+        <Button />
+      </header>
+    </div>
   );
 };
 export default Header;
