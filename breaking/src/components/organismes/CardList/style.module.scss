@@ -18,10 +18,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem 2rem;
   margin-top: 1.5rem;
+
   @include media-tablet {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include media-mobile {
+  @media screen and(max-width:600px) {
     grid-template-columns: 1fr;
   }
 }
