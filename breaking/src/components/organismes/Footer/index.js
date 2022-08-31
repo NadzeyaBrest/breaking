@@ -5,10 +5,12 @@ const Footer = () => {
   let date = new Date();
   let year = date.getFullYear();
   return (
-    <footer className={style.footer}>
-      <span className={style.text}>{year}</span>
-      <span>@Bacanava Nadzeya</span>
-    </footer>
+    <div>
+      <footer className={style.footer}>
+        <span className={style.text}>{year}</span>
+        <span>@Bacanava Nadzeya</span>
+      </footer>
+    </div>
   );
 };
 

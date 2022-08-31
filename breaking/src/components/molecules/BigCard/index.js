@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.scss";
 
-const BigCard = ({ img, status, name, nick, birthday, quote, author }) => {
+const BigCard = ({ img, status, name, nick, birthday, quote }) => {
   return (
     <div className={style.item}>
       <div className={style.img}>
@@ -20,9 +20,6 @@ const BigCard = ({ img, status, name, nick, birthday, quote, author }) => {
           </p>
           <p className={style.quote}>
             <span className={style.determinaton}>Цитата</span> {quote}
-          </p>
-          <p className={style.author}>
-            <span className={style.determinaton}>Автор</span> {author}
           </p>
         </div>
       </div>

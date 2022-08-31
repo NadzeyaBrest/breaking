@@ -13,6 +13,7 @@
   background-color: $color-white;
   margin-top: 5rem;
   @include font($height: 1.5rem, $size: 1rem);
+
   @include media-big-tablet {
     max-width: 35rem;
     margin-top: 4rem;
@@ -27,6 +28,9 @@ input {
   width: 100%;
   background-color: $color-white;
   @include font($height: 1.5rem, $size: 0.875rem);
+  @include media-mobile {
+    @include font($height: 1.3rem, $size: 0.7rem);
+  }
 }
 
 .button {
@@ -36,6 +40,9 @@ input {
   align-items: center;
   justify-content: center;
   @include font($height: 1.5rem, $size: 1rem);
+  @include media-mobile {
+    @include font($height: 1.3rem, $size: 0.8rem);
+  }
 }
 img {
   margin-right: 0.5rem;

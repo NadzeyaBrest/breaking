@@ -2,6 +2,7 @@ import { persons } from "../reducers/persons";
 import Repository from "../../repository";
 
 export const getPersons = (limit, offset) => async (dispatch) => {
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } = await Repository.PersonsActions.getPersonsFromApi(
       limit,
@@ -15,8 +16,10 @@ export const getPersons = (limit, offset) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
 export const getPerson = (id) => async (dispatch) => {
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } = await Repository.PersonsActions.getPersonFromApi(
       id
@@ -30,6 +33,7 @@ export const getPerson = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
 export const getQuote = (id) => async (dispatch) => {
   try {
@@ -46,8 +50,22 @@ export const getQuote = (id) => async (dispatch) => {
     console.log(error);
   }
 };
+export const getRandomQuote = (random) => async (dispatch) => {
+  try {
+    const { value, error } =
+      await Repository.PersonsActions.getRandomQuoteFromApi(random);
+
+    if (error) {
+      console.log("error getting");
+    } else {
+      dispatch(persons.actions.setRandomQuote(value));
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const getPersonViaName = (name) => async (dispatch) => {
-  console.log(name);
+  dispatch(persons.actions.setLoader(true));
   try {
     const { value, error } =
       await Repository.PersonsActions.getPersonFromApiName(name);
@@ -60,8 +78,10 @@ export const getPersonViaName = (name) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+  dispatch(persons.actions.setLoader(false));
 };
-export const getAmount = () => async (dispatch) => {
+
+export const getAmount = (limit, offset) => async (dispatch) => {
   try {
     const { value, error } =
       await Repository.PersonsActions.getTotalPersonsFromApi();
@@ -74,4 +94,11 @@ export const getAmount = () => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+};
+export const clearTest = () => (dispatch) => {
+  dispatch(persons.actions.clear());
+};
+
+export const clearNameFounded = () => (dispatch) => {
+  dispatch(persons.actions.clearName());
 };

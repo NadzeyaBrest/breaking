@@ -9,7 +9,11 @@
   border: 1px solid $color-main;
   .text {
     @include font($height: 1.5rem, $size: 1rem);
+    @media screen and (max-width: 800px) {
+      @include font($height: 1.3rem, $size: 0.8rem);
+    }
   }
+
   &.active {
     background-color: $color-addition-bright;
   }

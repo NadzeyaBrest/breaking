@@ -29,19 +29,35 @@ class PersonsActions {
     }
     return result;
   };
-  getQuoteFromApi = async (id) => {
+  getRandomQuoteFromApi = async () => {
     const result = {
       value: null,
       error: null,
     };
     try {
-      const response = await Connector.connector.get(`/quotes/${id}`);
+      const response = await Connector.connector.get("/quote/random");
       result.value = response.data[0];
     } catch (error) {
       result.error = error;
     }
     return result;
   };
+  getQuoteFromApi = async (nameForQuotes) => {
+    const result = {
+      value: null,
+      error: null,
+    };
+    try {
+      const response = await Connector.connector.get(
+        `/quote?author=${nameForQuotes}`
+      );
+      result.value = response.data[0];
+    } catch (error) {
+      result.error = error;
+    }
+    return result;
+  };
+
   getPersonFromApiName = async (name) => {
     const result = {
       value: null,
@@ -57,7 +73,7 @@ class PersonsActions {
     }
     return result;
   };
-  getTotalPersonsFromApi = async (limit, offset) => {
+  getTotalPersonsFromApi = async () => {
     const result = {
       value: null,
       error: null,
