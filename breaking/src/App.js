@@ -1,8 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
 import React, { Suspense } from "react";
 import Header from "./components/organismes/Header";
 import Footer from "./components/organismes/Footer";
-import { BrowserRouter } from "react-router-dom";
 import style from "./style.module.scss";
 import Loader from "./components/atoms/Loader";
 const CatalogPage = React.lazy(() => import("./components/pages/CatalogPage"));
@@ -12,7 +11,7 @@ const SearchPage = React.lazy(() => import("./components/pages/SearchPage"));
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <div className={style.around}>
         <Header />
         <Suspense fallback={<Loader />}>
@@ -27,7 +26,7 @@ const App = () => {
         </Suspense>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
