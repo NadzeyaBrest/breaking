@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.scss";
 import squares2Grey from "../../../assets/images/squares2Grey.svg";
 import squares2Yellow from "../../../assets/images/squares2Yellow.svg";
@@ -7,6 +7,7 @@ import squares4Yellow from "../../../assets/images/squares4Yellow.svg";
 import { useDispatch } from "react-redux";
 import { persons } from "../../../store/reducers/persons";
 import CatalogLook from "./component";
+import { useSelector } from "react-redux/es/exports";
 
 const CatalogLookContainer = () => {
   let [toggled, setToggled] = useState(true);
@@ -16,6 +17,7 @@ const CatalogLookContainer = () => {
     setToggled(value);
     dispatch(persons.actions.setToggledIntoState(value));
   };
+  toggled = useSelector((state) => state.persons.toggled);
 
   let firstButton = !toggled ? squares2Yellow : squares2Grey;
   let secondButton = toggled ? squares4Yellow : squares4Grey;
