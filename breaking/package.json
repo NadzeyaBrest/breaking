@@ -1,5 +1,6 @@
 {
   "name": "breaking",
+  "homepage": "https://nadzeyabrest.github.io/breaking/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
