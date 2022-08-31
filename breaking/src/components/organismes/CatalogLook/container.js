@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./style.module.scss";
 import squares2Grey from "../../../assets/images/squares2Grey.svg";
 import squares2Yellow from "../../../assets/images/squares2Yellow.svg";
